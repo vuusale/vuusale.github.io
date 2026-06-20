@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="AppSec portfolio — Vusala. Application security, vulnerability research, & secure-by-design engineering." />
+  <title>Vusala — AppSec Portfolio</title>
+
+  <!-- Link external stylesheet (required by the brief: no inline CSS) -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Skip link for keyboard users -->
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Site header / navigation -->
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a class="brand" href="#" aria-label="Go to homepage">
+        <!-- Simple SVG logo -->
+        <svg width="36" height="36" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <rect x="2" y="2" width="20" height="20" rx="4" fill="currentColor" />
+          <path d="M6 12h12" stroke="#fff" stroke-width="1.4" stroke-linecap="round" />
+        </svg>
+        <span class="brand-text">Vusala · AppSec</span>
+      </a>
+
+      <!-- Desktop nav -->
+      <nav class="nav" role="navigation" aria-label="Main navigation">
+        <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navList">
+          <span class="sr-only">Toggle navigation</span>
+          ☰
+        </button>
+
+        <ul class="nav-list" id="navList">
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li>
+            <button class="btn ghost" id="themeToggle" aria-pressed="false" title="Toggle light/dark">Theme</button>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main content -->
+  <main id="main" class="container">
+    <!-- Hero -->
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="hero-inner">
+        <h1 id="hero-heading">Secure apps start with a curious mind.</h1>
+        <p class="lede">I'm Vusala — application security engineer, bug-hunter, and threat modeller. I find subtle vulnerabilities and turn them into actionable fixes.</p>
+
+        <div class="hero-actions">
+          <a class="btn primary" href="#projects">Selected work</a>
+          <a class="btn" href="#contact">Hire / Contact</a>
+        </div>
+
+        <!-- Small stats or quick facts -->
+        <ul class="quick-stats" aria-hidden="true">
+          <li><strong>7+</strong> public disclosures</li>
+          <li><strong>100+</strong> audit hours</li>
+          <li><strong>OWASP</strong> practical focus</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="section about" aria-labelledby="about-heading">
+      <h2 id="about-heading">About</h2>
+      <div class="about-grid">
+        <div>
+          <p>I focus on application-layer security: source code review, threat modelling, secure design, and pragmatic remediation guidance. I prefer clear, measurable fixes over vague recommendations.</p>
+
+          <p>My process: reconnaissance → reproduce → root-cause → exploit proof → remediation & verification.</p>
+
+          <p class="muted">Open to contract & part-time senior AppSec roles. Remote-friendly.</p>
+        </div>
+
+        <aside class="contact-card" aria-label="Quick contact">
+          <h3>Quick contact</h3>
+          <p class="mono">Email: <span id="emailText">vusala@example.com</span></p>
+          <div class="contact-row">
+            <button class="btn ghost" id="copyEmail">Copy email</button>
+            <a class="btn" href="mailto:vusala@example.com?subject=AppSec%20work" id="mailLink">Email</a>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE (inserted) -->
+
+
+    <!-- Skills -->
+    <section id="skills" class="section skills" aria-labelledby="skills-heading">
+      <h2 id="skills-heading">Skills</h2>
+      <ul class="skill-list" role="list">
+        <li><strong>Source code review</strong> — web & backend code (Node, Python, Java)</li>
+        <li><strong>Threat modelling</strong> — STRIDE-informed, pragmatic mitigations</li>
+        <li><strong>Authentication & session</strong> — OAuth flows, JWTs, session fixation</li>
+        <li><strong>Dependency & supply chain</strong> — SBOM reviews, dependency fuzzing</li>
+        <li><strong>Secure architecture</strong> — least privilege, safe defaults</li>
+      </ul>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="section projects" aria-labelledby="projects-heading">
+      <h2 id="projects-heading">Selected projects</h2>
+
+      <ul class="projects-grid">
+        <li class="project">
+          <h3>API rate-limit bypass — public bug</h3>
+          <p class="proj-desc">Found an auth bypass allowing unauthenticated enumeration of user emails through pagination chaining. Provided PoC and patch suggestion to centralize token validation.</p>
+          <p class="proj-meta">Tech: REST, JWT, Node.js</p>
+          <a class="link-more" href="#" aria-label="Read more about API rate-limit bypass (demo)">Read case</a>
+        </li>
+
+        <li class="project">
+          <h3>SSRF in image proxy</h3>
+          <p class="proj-desc">Discovered open-redirect + SSRF vector in an image proxy that leaked internal metadata. Guided team to validate allowed hosts and implement strict parsing.</p>
+          <p class="proj-meta">Tech: Go, S3, reverse proxy</p>
+          <a class="link-more" href="#" aria-label="Read more about SSRF in image proxy (demo)">Read case</a>
+        </li>
+
+        <li class="project">
+          <h3>Dependency chain compromise analysis</h3>
+          <p class="proj-desc">Audited npm dependencies, surfaced transitive malware risk and proposed version pinning + CI checks for SBOM generation.</p>
+          <p class="proj-meta">Tech: npm, SBOM, CI</p>
+          <a class="link-more" href="#" aria-label="Read more about dependency chain compromise (demo)">Read case</a>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Contact / CTA -->
+    <section id="contact" class="section contact" aria-labelledby="contact-heading">
+      <h2 id="contact-heading">Work with me</h2>
+      <p>If you need pragmatic AppSec help — audits, threat models, or red-team style application tests — get in touch.</p>
+
+      <form class="contact-form" action="mailto:vusala@example.com" method="get" onsubmit="return false;" aria-label="Contact form">
+        <label for="name">Your name</label>
+        <input id="name" name="name" type="text" required />
+
+        <label for="msg">Short message</label>
+        <textarea id="msg" name="msg" rows="5" required></textarea>
+
+        <div class="form-row">
+          <button type="submit" class="btn primary" id="sendBtn">Prepare email</button>
+          <button type="button" class="btn ghost" id="clearForm">Clear</button>
+        </div>
+
+        <p class="muted small">This prepares a mailto link locally (no server). You can copy email above if you prefer direct contact.</p>
+      </form>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <p>&copy; <span id="year"></span> Vusala · AppSec. Designed for clarity.</p>
+      <p class="muted small">Available for contract & remote engagements.</p>
+    </div>
+  </footer>
+
+  <!-- Link external script (required by brief: no inline JS) -->
+  <script src="script.js" defer></script>
+</body>
+</html>

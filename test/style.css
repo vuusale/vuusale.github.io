@@ -1,0 +1,139 @@
+/* style.css
+   Production-ready, minimal AppSec portfolio styles.
+   Uses CSS custom properties for easy theming.
+   No external fonts — system stack used for reliability.
+*/
+
+/* ------ Theme variables ------ */
+:root{
+  --bg: #0f1724;            /* deep navy */
+  --panel: #0f1724;
+  --muted: #9aa4b2;
+  --fg: #e6eef6;            /* soft off-white */
+  --accent: #2dd4bf;        /* teal */
+  --accent-2: #60a5fa;      /* soft blue for highlights */
+  --glass: rgba(255,255,255,0.03);
+  --radius: 12px;
+  --max-width: 1000px;
+  --container-padding: 20px;
+}
+
+/* Light theme (toggled by .light on body) */
+body.light{
+  --bg: #fbfdff;
+  --panel: #ffffff;
+  --muted: #55606a;
+  --fg: #0f1724;
+  --accent: #0ea5a3;
+  --accent-2: #2563eb;
+  --glass: rgba(15,23,36,0.03);
+}
+
+/* Global reset / layout */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: linear-gradient(180deg,var(--bg), color-mix(in srgb, var(--bg) 85%, black 15%));
+  color:var(--fg);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.45;
+  font-size:16px;
+}
+
+/* Utility */
+.container{max-width:var(--max-width);margin:0 auto;padding:var(--container-padding)}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.skip-link{position:absolute;left:8px;top:8px;background:var(--accent);color:var(--panel);padding:8px 10px;border-radius:6px;z-index:100;transform:translateY(-120%);transition:transform .18s}
+.skip-link:focus{transform:none}
+
+/* Header */
+.site-header{backdrop-filter: blur(4px);background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);position:sticky;top:0;z-index:60;border-bottom:1px solid rgba(255,255,255,0.03)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+.brand{display:flex;align-items:center;gap:10px;color:var(--fg);text-decoration:none}
+.brand svg{color:var(--accent)}
+.brand-text{font-weight:600;letter-spacing:0.2px}
+
+/* Nav */
+.nav-list{list-style:none;display:flex;gap:10px;align-items:center;margin:0;padding:0}
+.nav-list a, .nav-list button{color:var(--fg);text-decoration:none;font-weight:600;background:none;border:0;padding:8px 10px;border-radius:8px}
+.nav-list a:hover, .nav-list button:hover{background:var(--glass)}
+.nav-toggle{display:none;font-size:20px;background:none;border:0padding:8px}
+
+/* Hero */
+.hero{display:grid;align-items:center;min-height:56vh;padding:32px 0}
+.hero-inner{background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);border-radius:16px;padding:34px}
+h1{font-size:clamp(1.6rem, 3.2vw, 2.2rem);margin:0 0 12px}
+.lede{color:var(--muted);margin:0 0 18px}
+.hero-actions{display:flex;gap:12px;margin-bottom:18px}
+.quick-stats{display:flex;gap:18px;margin:18px 0 0;padding:0;list-style:none;color:var(--muted)}
+.quick-stats strong{display:block;color:var(--fg)}
+
+/* Sections */
+.section{padding:28px 0;border-top:1px solid rgba(255,255,255,0.02)}
+.section h2{margin:0 0 12px;font-size:1.1rem}
+.about-grid{display:grid;grid-template-columns:1fr 300px;gap:20px;align-items:start}
+.contact-card{background:var(--panel);padding:14px;border-radius:12px;box-shadow:0 6px 20px rgba(2,6,23,0.45);border:1px solid rgba(255,255,255,0.02)}
+.mono{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", monospace}
+
+/* Skills */
+.skill-list{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+.skill-list li{background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.02)}
+
+/* Projects */
+.projects-grid{list-style:none;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin:0}
+.project{padding:14px;border-radius:12px;background:var(--panel);border:1px solid rgba(255,255,255,0.03)}
+.proj-desc{color:var(--muted);margin:8px 0}
+.proj-meta{font-size:.9rem;color:var(--muted)}
+.link-more{display:inline-block;margin-top:12px;text-decoration:none;font-weight:600}
+
+/* Contact form */
+.contact-form{max-width:640px;background:transparent;padding:14px;border-radius:10px}
+.contact-form label{display:block;margin-top:10px;font-weight:600}
+.contact-form input, .contact-form textarea{width:100%;padding:10px;margin-top:6px;border-radius:8px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:var(--fg);resize:vertical}
+.form-row{display:flex;gap:10px;margin-top:12px}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:10px;border:1px solid transparent;background:transparent;color:var(--fg);cursor:pointer;text-decoration:none}
+.btn.primary{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:var(--panel);font-weight:700}
+.btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.05)}
+
+/* Footer */
+.site-footer{padding:26px 0;border-top:1px solid rgba(255,255,255,0.02);color:var(--muted)}
+
+/* Small utilities */
+.muted{color:var(--muted)}
+.small{font-size:.9rem}
+
+/* Experience / career-style section (resume-like) */
+.experience-list{display:flex;flex-direction:column;gap:18px;margin-top:12px}
+.job{background:var(--panel);border:1px solid rgba(255,255,255,0.03);padding:14px;border-radius:12px;box-shadow:0 8px 20px rgba(2,6,23,0.25)}
+.job-header{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.job-title{font-weight:700;font-size:1rem;color:var(--fg)}
+.job-company{color:var(--muted);font-size:.95rem;margin-top:4px}
+.job-dates{font-size:.9rem;color:var(--muted);white-space:nowrap}
+.job-bullets{margin:12px 0 0 16px;color:var(--fg)}
+.job-bullets li{margin-bottom:8px;line-height:1.4;color:color-mix(in srgb, var(--fg) 88%, var(--muted) 12%)}
+
+/* subtle timeline accent on the left */
+.experience-list{position:relative;padding-left:12px}
+.experience-list::before{content:"";position:absolute;left:6px;top:6px;bottom:6px;width:2px;background:linear-gradient(180deg,var(--accent),var(--accent-2));border-radius:2px;opacity:0.12}
+.job{position:relative;padding-left:18px}
+.job::before{content:"";position:absolute;left:3px;top:18px;width:10px;height:10px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px rgba(45,212,191,0.06)}
+
+/* Responsive tweaks */
+@media (max-width:700px){
+  .job-header{flex-direction:column;align-items:flex-start;gap:8px}
+  .job-dates{align-self:flex-end;color:var(--muted)}
+}
+@media (max-width:900px){
+  .about-grid{grid-template-columns:1fr}
+  .nav-toggle{display:inline-block}
+  .nav-list{position:absolute;right:14px;top:64px;background:var(--panel);padding:12px;border-radius:12px;box-shadow:0 6px 22px rgba(2,6,23,0.5);flex-direction:column;display:none}
+  .nav-list.show{display:flex}
+}
+
+/* Focus styles for accessibility */
+a:focus, button:focus, input:focus, textarea:focus{outline:3px solid color-mix(in srgb, var(--accent) 65%, transparent);outline-offset:3px}
