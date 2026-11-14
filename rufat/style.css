@@ -12,24 +12,23 @@ body{background:var(--bg);color:var(--ink);font:18px/1.5 'Cormorant Garamond',Ge
 .star{position:absolute;border-radius:50%;background:var(--ink);animation:tw 3s ease-in-out infinite}
 @keyframes tw{0%,100%{opacity:.2}50%{opacity:1}}
 .moon{filter:drop-shadow(0 0 14px rgba(241,238,230,.45))}
-.gate{position:fixed;inset:0;z-index:5;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px;transition:opacity .4s ease,visibility 0s}
-.gate.open{opacity:0;visibility:hidden;transition:opacity 2s ease 2.6s,visibility 0s linear 4.6s}
+.gate{position:fixed;inset:0;z-index:5;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px;transition:opacity .8s cubic-bezier(.4,0,.2,1),visibility 0s}
+.gate.open{opacity:0;visibility:hidden;transition:opacity 1.8s cubic-bezier(.4,0,.2,1) 2.6s,visibility 0s linear 4.4s}
 .eyebrow{margin:0;font-size:11px;font-weight:600;letter-spacing:5px;color:var(--gold)}
-.row{display:flex;gap:16px;margin-top:50px;transition:transform .3s ease,opacity .3s ease}
+.row{display:flex;gap:16px;margin-top:50px;transition:transform .6s ease,opacity .6s ease;will-change:transform,opacity}
 .ph{position:relative;display:block;width:44px;height:44px;border-radius:50%;background:#F1EEE6;overflow:hidden;box-shadow:0 0 14px rgba(241,238,230,.35)}
-.sh{position:absolute;top:0;width:44px;height:44px;border-radius:50%;background:#1A2440;transition:left .3s ease}
-.gate.open .sh{left:48px!important;transition:left 1.4s ease}
-.gate.open .row{transform:scale(1.3);opacity:0;transition:transform 2s ease 1.6s,opacity 1.6s ease 2s}
-.fade{transition:opacity .3s ease}
+.sh{position:absolute;top:0;left:0;width:44px;height:44px;border-radius:50%;background:#1A2440;transform:translateX(var(--o));transition:transform .6s ease;will-change:transform}
+.gate.open .sh{transform:translateX(48px);transition:transform 1.4s cubic-bezier(.45,0,.2,1)}
+.gate.open .row{transform:scale(1.25);opacity:0;transition:transform 2s cubic-bezier(.4,0,.2,1) 1.6s,opacity 1.6s ease 2s}
+.fade{transition:opacity .6s ease .2s}
 .gate.open .fade{opacity:0;transition:opacity 1s ease}
 .btn{margin-top:60px;min-height:48px;padding:0 30px;border:1px solid var(--gold);border-radius:24px;background:transparent;color:var(--ink);font:500 13px Montserrat,sans-serif;letter-spacing:2px;cursor:pointer;animation:gl 2.4s ease-in-out infinite}
 .btn:focus-visible,.link:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
 @keyframes gl{0%,100%{box-shadow:0 0 0 0 rgba(226,196,126,0)}50%{box-shadow:0 0 0 8px rgba(226,196,126,.18)}}
-.page{position:fixed;inset:0;overflow-y:auto;display:none}
-.page.show{display:block;animation:in 2s ease 2.8s both}
-@keyframes in{from{opacity:0}to{opacity:1}}
-.page .rv{animation:up 2s ease both}
-@keyframes up{from{opacity:0;transform:translateY(30px);filter:blur(4px)}to{opacity:1;transform:none;filter:none}}
+.page{position:fixed;inset:0;overflow-y:auto;-webkit-overflow-scrolling:touch;opacity:0;visibility:hidden;transition:opacity .7s ease,visibility 0s linear .7s}
+.page.show{opacity:1;visibility:visible;transition:opacity 2s cubic-bezier(.4,0,.2,1) 2.8s,visibility 0s}
+.page.run .rv{animation:up 1.8s cubic-bezier(.22,.61,.36,1) both}
+@keyframes up{from{opacity:0;transform:translate3d(0,28px,0)}to{opacity:1;transform:none}}
 .wrap{max-width:440px;margin:0 auto}
 section{padding:36px 28px;text-align:center}
 .hero{padding-top:56px;display:flex;flex-direction:column;align-items:center}
@@ -56,4 +55,6 @@ h2{margin:0;font-weight:400;font-style:italic;font-size:28px}
 .venue p{margin:0}
 .link{margin-top:12px;display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 26px;border-radius:22px;border:1px solid var(--gold);color:var(--gold);text-decoration:none;font-size:13px;letter-spacing:1px}
 .replay{margin-top:22px;min-height:44px;padding:0 18px;border:0;background:none;color:var(--mute);font:12px Montserrat,sans-serif;letter-spacing:1px;cursor:pointer}
+.date .v,.date .big,.cd .n{font-family:'Cormorant Garamond',Georgia,serif}
+.cd .n{font-variant-numeric:normal;letter-spacing:0}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
