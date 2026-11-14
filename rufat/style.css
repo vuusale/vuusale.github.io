@@ -33,8 +33,8 @@ body{background:var(--bg);color:var(--ink);font:18px/1.5 'Cormorant Garamond',Ge
 .wrap{max-width:440px;margin:0 auto}
 section{padding:36px 28px;text-align:center}
 .hero{padding-top:56px;display:flex;flex-direction:column;align-items:center}
-h1{margin:0;font-weight:400;font-style:italic;font-size:66px;line-height:1}
-.amp{margin:2px 0;font-style:italic;font-size:30px;color:var(--gold)}
+h1{margin:0;font-family:'Alex Brush',cursive;font-weight:400;font-size:74px;line-height:1.1}
+.amp{margin:0;font-family:'Alex Brush',cursive;font-size:36px;line-height:1;color:var(--gold)}
 .date{margin-top:34px;width:100%;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));align-items:center;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:18px 0}
 .date p{margin:0}
 .date .k{font-size:9px;font-weight:600;letter-spacing:3px;color:var(--gold)}
