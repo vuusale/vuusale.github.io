@@ -3,7 +3,7 @@
    PICTURE: five silver moon phases on a starry navy sky
    COLOUR and TYPE: navy #0C1529, gold #E2C47E, ivory; Cormorant + Montserrat
    LAYOUT: one centred phone-width column; gate screen, then scrolling sections */
-:root{color-scheme:dark;--bg:#0C1529;--ink:#F3EEE2;--gold:#E2C47E;--soft:#DCD4C2;--mute:#C9C1AF;--line:rgba(226,196,126,.55)}
+:root{color-scheme:dark;--bg:#031b4e;--ink:#F3EEE2;--gold:#E2C47E;--soft:#DCD4C2;--mute:#C9C1AF;--line:rgba(226,196,126,.55)}
 *{box-sizing:border-box;min-width:0}
 html,body{margin:0;height:100%}
 body{background:var(--bg);color:var(--ink);font:18px/1.5 'Cormorant Garamond',Georgia,serif;overflow:hidden}
